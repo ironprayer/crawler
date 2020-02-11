@@ -57,20 +57,4 @@ def setDataFile(filePath, fileName, FieldNameList, fieldSpr) :
 		f.write(fieldSpr.join(FieldNameList))
 		f.close()
 
-
-def setLatestIdxFile() :
-
-	if os.path.exists('%slatestIdx.txt'%config.abs_path()) == False:
-		f = open('%slatestIdx.txt'%config.abs_path(), 'w')
-		pickle.dump({},f)
-		f.close()
-		return {}
-
-	f = open('%slatestIdx.txt'%config.abs_path())
-	
-	LatestIdxDic = pickle.load(f)
-	f.close()
-	return LatestIdxDic 
-
-
 #❚
